@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'GBK'?>
+<weblogic-web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.bea.com/ns/weblogic/weblogic-web-app http://www.bea.com/ns/weblogic/weblogic-web-app/1.0/weblogic-web-app.xsd"
+                  xmlns="http://www.bea.com/ns/weblogic/weblogic-web-app">
+  <security-role-assignment>
+    <role-name>adminRole</role-name>
+    <principal-name>Administrators</principal-name>
+  </security-role-assignment>
+</weblogic-web-app>

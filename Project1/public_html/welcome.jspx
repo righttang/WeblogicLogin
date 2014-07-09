@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='GBK'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=GBK"/>
+  <f:view>
+    <html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=GBK"/>
+        <title>Login Test</title>
+      </head>
+      <body>
+        <h:form>
+          <h:outputText value="Login Test"/><br/>
+          <h:outputText value="Your Current Logged in as #{facesContext.externalContext.remoteUser}"/> <br/>
+
+          <h:outputLink value="protected/landing.jspx">
+            <h:outputText value="Please goto Landing Page"/>
+          </h:outputLink>
+        </h:form>
+      </body>
+    </html>
+  </f:view>
+</jsp:root>

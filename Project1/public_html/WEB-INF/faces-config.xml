@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GBK"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee">
+  <managed-bean>
+    <managed-bean-name>LoginBean</managed-bean-name>
+    <managed-bean-class>com.malibu.LoginBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <navigation-rule>
+    <from-view-id>/welcome.jspx</from-view-id>
+  </navigation-rule>
+</faces-config>
