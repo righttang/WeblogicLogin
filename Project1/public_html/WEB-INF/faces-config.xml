@@ -8,4 +8,11 @@
   <navigation-rule>
     <from-view-id>/welcome.jspx</from-view-id>
   </navigation-rule>
+  <navigation-rule>
+    <from-view-id>/Login.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/protected/landing.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
 </faces-config>

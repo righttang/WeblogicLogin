@@ -2,14 +2,12 @@ package com.malibu;
 
 import java.security.Principal;
 
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
-
-import javax.faces.event.ActionEvent;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import weblogic.security.principal.WLSUserImpl;
 
 public class LoginBean {
     String username;
@@ -25,6 +23,7 @@ public class LoginBean {
         this.session = session;
         Principal princple = request.getUserPrincipal();
         username = princple.getName();
+        
     }
 
     public void setUsername(String username) {
@@ -47,12 +46,21 @@ public class LoginBean {
         return "This is the login bean";
     }
 
-    public String doLogout() {
-        // Add event code here...
-        if (session == null) {
-            session = ((HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest()).getSession();
+    public void doLogout() {
+        if (session != null) {
+            session.invalidate();
         }
-        session.invalidate();
-        return "/faces/welcome.jspx";
+        redirectToPage("/faces/welcome.jspx");
+    }
+
+    private void redirectToPage(String redirectUrl) {
+        final FacesContext fctx = FacesContext.getCurrentInstance();
+        try {
+            final ExternalContext ectx = fctx.getExternalContext();
+            ectx.redirect(ectx.getRequestContextPath() + redirectUrl);
+            fctx.responseComplete();
+        } catch (Exception e) {
+            fctx.responseComplete();
+        }
     }
 }

@@ -36,14 +36,37 @@
          name="jspName">/error.jspx</property>
    </Page>
    <Page
-      id="Page6">
+      id="Page8">
       <property
          name="wildcard">false</property>
       <property
-         name="y">157.59766</property>
+         name="y">175.44824</property>
       <property
-         name="x">818.0</property>
+         name="x">804.0381</property>
       <property
-         name="jspName">/landing.jspx</property>
+         name="jspName">/protected/landing.jspx</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase9"
+      from="Page3"
+      to="Page8">
+      <property
+         name="fromOutcome">success</property>
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="sdm:polyPoints">R50,675.0,122.24707,763.0381,175.09766,L50</property>
+   </NavigationCase>
+   <Page
+      id="Page10">
+      <property
+         name="wildcard">false</property>
+      <property
+         name="y">267.14355</property>
+      <property
+         name="x">787.0</property>
+      <property
+         name="jspName">/protected/landing2.jspx</property>
    </Page>
 </SDM>
