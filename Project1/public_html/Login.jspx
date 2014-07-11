@@ -18,14 +18,14 @@
             <tr>
               <td>Username:</td>
               <td>
-                <input type="text" name="j_username"></input>
+                <input type="text" name="j_username" value="9700007"></input>
               </td>
             </tr>
              
             <tr>
               <td>Password:</td>
               <td>
-                <input type="password" name="j_password"></input>
+                <input type="password" name="j_password" value="Password753"></input>
               </td>
             </tr>
              

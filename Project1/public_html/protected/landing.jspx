@@ -7,11 +7,26 @@
       <head>
         <meta http-equiv="Content-Type" content="text/html; charset=GBK"/>
         <title>landing</title>
+        <link type="text/css" rel="stylesheet" href="../css/project.css"/>
       </head>
       <body>
+
         <h:outputText value="You are in"/><br/>
          
         <h:outputText value="Your Session Bean Logged in as #{LoginBean.username}"/><br/>
+         
+        <h:dataTable value="#{LoginBean.userpropertyArray}" var="lup" styleClass="order-table" headerClass="order-table-header" rowClasses="order-table-odd-row,order-table-even-row">
+          <h:column>
+            <h:outputText value="#{lup.propertyName}"/>
+          </h:column>
+          <h:column>
+            <h:dataTable value="#{lup.propertyList}" var="lupp" styleClass="order-table" headerClass="order-table-header" rowClasses="order-table-odd-row,order-table-even-row">
+              <h:column>
+                <h:outputText value="#{lupp}"/>
+              </h:column>
+            </h:dataTable>
+          </h:column>
+        </h:dataTable>
          
         <h:form>
           <h:commandLink value="Logout" action="#{LoginBean.doLogout}"/>

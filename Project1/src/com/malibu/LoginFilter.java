@@ -50,22 +50,7 @@ public class LoginFilter implements Filter {
                 IdentityStoreAdapter identityAdapter = IdentityStoreAdapter.getInstance();
                 UserProfile userProfile = identityAdapter.getUserProfile(loginbean.getUsername());
                 if (userProfile != null) {
-                    try {
-
-                        PropertySet propertyset = userProfile.getAllUserProperties();
-                        System.out.println(identityAdapter.getPropertyVal(userProfile, "jbwSecureItEaseId"));
-                        String[] attristr =
-                        { "naguid", "cn", "givenname", "sn", "nagaccessrole", "jbwid", "jbwmarketondemandid", "jbwsecureiteaseid", "nagpwdmustchange", "objectclass", "objectclass", "objectclass",
-                          "objectclass", "objectclass", "objectclass", "userpassword", "authpassword", "authpassword", "authpassword" };
-
-
-                        for (Iterator<Property> itr = userProfile.getProperties(attristr).getAll(); itr.hasNext(); ) {
-                            Property currentproperty = itr.next();
-                            System.out.println(currentproperty.getName() + " = " + currentproperty.getValues());
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                        loginbean.setUserProfile(userProfile);
                 }
             }
             filterChain.doFilter(servletRequest, servletResponse);
